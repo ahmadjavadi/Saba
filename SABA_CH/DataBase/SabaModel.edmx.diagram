@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7f60fee588e14cdf9373e8bd6ea4b8f7" Name="Diagram1">
+        <EntityTypeShape EntityType="SabaNewModel.AnnualCredit" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Area" Width="1.5" PointX="5.25" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Button" Width="1.5" PointX="12.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Card" Width="1.5" PointX="15" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Catchment" Width="1.5" PointX="5.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.ChangeDB" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.City" Width="1.5" PointX="5.25" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Country" Width="1.5" PointX="0.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.CreateTokenByDongle" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Credit" Width="1.5" PointX="12" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Curve" Width="1.5" PointX="20.25" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Customer" Width="1.5" PointX="9.75" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.DangelInfo" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.DataBasesInfo" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.DeviceModel" Width="1.5" PointX="12.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.DeviceType" Width="1.5" PointX="10.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.EOffice" Width="1.5" PointX="7.5" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Error" Width="1.5" PointX="15" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.ESubOffice" Width="1.5" PointX="7.5" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Group" Width="1.5" PointX="9.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Language" Width="1.5" PointX="7.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Location" Width="1.5" PointX="7.5" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.MessageText" Width="1.5" PointX="10" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Meter" Width="1.5" PointX="15" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.MeterError" Width="1.5" PointX="17.25" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.MeterShutdownInterval" Width="1.5" PointX="17.25" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Modem" Width="1.5" PointX="12.75" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.OBISS" Width="1.5" PointX="18" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.OBISType" Width="1.5" PointX="15.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.OBISUnit" Width="1.5" PointX="18" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.OBISValueDetail" Width="1.5" PointX="20.25" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.OBISValueHeader" Width="1.5" PointX="18" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Office" Width="1.5" PointX="7.5" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.OldOBISs" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Plain" Width="1.5" PointX="5.25" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Province" Width="1.5" PointX="3" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.regulationRule" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Report" Width="1.5" PointX="18" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.SoftversionToDeviceModel" Width="1.5" PointX="10.5" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.SourceType" Width="1.5" PointX="15.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.SubOffice" Width="1.5" PointX="7.5" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.sysdiagram" Width="1.5" PointX="11.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Token" Width="1.5" PointX="23.25" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.TokenFromDangle" Width="1.5" PointX="17.25" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Translate" Width="1.5" PointX="10" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.UnitGroup" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.User" Width="1.5" PointX="9.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.VeeConsumedWater" Width="1.5" PointX="17.25" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Window" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.ButtonAccess" Width="1.5" PointX="15" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.CardToMeter" Width="1.5" PointX="17.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.ConsumedActiveEnergy" Width="1.5" PointX="17.25" PointY="47.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.ConsumedMaxDemand" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.ConsumedWater" Width="1.5" PointX="17.25" PointY="51.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.Credit303" Width="1.5" PointX="6.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.FixedOBI" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.GroupToProvince" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.HashToGroup" Width="1.5" PointX="12" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.MeterToCustomer" Width="1.5" PointX="13.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.MeterToGroup" Width="1.5" PointX="17.25" PointY="55.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.MonthName" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.OBISToReport" Width="1.5" PointX="20.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.OBISToSoftversion" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.ObjectofWindow" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.RegionalOffice" Width="1.5" PointX="2.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.StatusOBISsDesc" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.TempMeter1" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.TempSaba" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.UserToGroup" Width="1.5" PointX="12" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.AccessUserToMeter" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.GroupsMeter" Width="1.5" PointX="2.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.MaxReadDateView" Width="1.5" PointX="4.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SabaNewModel.MeterErrorView" Width="1.5" PointX="6.75" PointY="17.75" IsExpanded="true" />
+        <AssociationConnector Association="SabaNewModel.FK_Locations_Areas" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_ButtonAccess_Buttons" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_CardToMeter_Cards" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Locations_Catchments" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Cities_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Cities_Provinces" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Locations_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Provinces_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Credits_Credits" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Credits_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Credits_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK__Curve__MeterID__54E23A56" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK__Curve__ReadoutID__55D65E8F" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Customers_EOffice" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Customers_ESubOffice" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Customers_Locations" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Customers_Office" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Customers_SubOffice" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Meter_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_DeviceModel_DeviceType" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Meter_MeterType" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Modem_DeviceModel" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_OBISValueHeader_DeviceType" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_MeterError_Errors" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_HashToGroup_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_MessageText_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Translate_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Locations_Plains" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_CardToMeter_Meter" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_ConsumedActiveEnergy_Meter" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_ConsumedWater_Meter" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Meter_Modem" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Meter_SoftversionToDeviceModel" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_MeterError_Meter" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_MeterShutdownInterval_Meter" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_MeterToGroup_Meter" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Token_Meter" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_TokenFromDangle_Meter" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_VeeConsumedWater_Meter" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Modem_SoftversionToDeviceModel" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_OBISToReport_OBISs" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_OBISValueDetail_OBISs" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_OBISValueDetail_OBISUnits" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_OBISValueDetail_OBISValueDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_OBISValueHeader_SourceType" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_OBISValueHeader_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_OBISs_OBISUnits" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_OBISToSoftversion_OBISs" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_StatusOBISsDesc_OBISs" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_OBISToReport_Reports" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_Token_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_ButtonAccess_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_HashToGroup_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.FK_UserToGroup_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.OBISToWindow" ManuallyRouted="false" />
+        <AssociationConnector Association="SabaNewModel.OBISTypeToReport" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,79 @@
+﻿<Window x:Class="SABA_CH.UI.Simple"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:filter="clr-namespace:DataGridFilterLibrary;assembly=DataGridFilterLibrary" Height="550" Width="700" FlowDirection="RightToLeft" Activated="Window_Activated" Closing="Window_Closing">
+    <Window.Resources>
+        <RoutedUICommand x:Key="MyCommand1" Text="Text" />
+        <RoutedUICommand x:Key="MyCommand2" Text="Another Text" />
+        <RoutedUICommand x:Key="MyCommand3" Text="Another Text" />
+        <RoutedUICommand x:Key="MyCommand4" Text="Another Text"/>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource MyCommand1}" 
+                    Executed="ToolStripButtonNew_Click" />
+        <CommandBinding Command="{StaticResource MyCommand2}" 
+                        Executed="ToolStripButtonSave_Click" />
+        <CommandBinding Command="Delete" 
+                        Executed="ToolStripButtonDelete_Click" />
+
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="N" Modifiers="Ctrl" Command="{StaticResource MyCommand1}" />
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="{StaticResource MyCommand2}" />
+        <KeyBinding Key="P" Modifiers="Ctrl" Command="{StaticResource MyCommand3}" />
+        <KeyBinding Key="Delete"  Command="Delete" />
+    </Window.InputBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="124*"/>
+            <RowDefinition Height="119*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFD7E8FC" Offset="0" />
+                <GradientStop Color="#FF95B7E8" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <ToolBar FlowDirection="LeftToRight" x:Name="toolBar1">
+            <ToolBar.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </ToolBar.Background>
+            <Button Height="25" x:Name="ToolStripButtonNew" ToolTip="New" Width="25" Click="ToolStripButtonNew_Click" Visibility="{Binding CanInsert, Converter={StaticResource BoolToVis}}">
+                <Image Source="/Saba;component/Image/new.png" Stretch="UniformToFill" />
+            </Button>
+            <Button  Height="25" x:Name="ToolStripButtonSave" ToolTip="Save" Width="30" Click="ToolStripButtonSave_Click" Visibility="{Binding CanUpdate, Converter={StaticResource BoolToVis}}">
+                <Image x:Name="ToolStripButtonSave1"  Source="save_all.png" Stretch="Fill" />
+            </Button>
+            <Button Height="25" x:Name="ToolStripButtonDelete" ToolTip="Delete" Width="25" Click="ToolStripButtonDelete_Click" Visibility="{Binding CanDelete, Converter={StaticResource BoolToVis}}">
+                <Image Source="button_cancel_256.png" Stretch="Fill" />
+            </Button>
+            <Button Height="25" x:Name="ToolStripButtonRefresh" ToolTip="Refresh" Width="25" Click="ToolStripButtonRefresh_Click">
+                <Image Source="/Saba;component/Image/refresh.png" Stretch="Fill" />
+            </Button>
+            <Button Height="25" x:Name="ToolStripButtonImport" ToolTip="Import From File" Width="25" Click="ToolStripButtonImport_Click" Visibility="{Binding CanImportFromFile, Converter={StaticResource BoolToVis}}">
+                <Image Source="/Saba;component/Image/import.png" Stretch="Fill" />
+            </Button>
+
+            <Separator Margin="0" />
+        </ToolBar>
+        <DataGrid x:Name="MainGrid" Grid.Row="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="White" AutoGenerateColumns="False" IsReadOnly="True"
+                  filter:DataGridExtensions.UseBackgroundWorkerForFiltering="True"
+                        
+                       filter:DataGridExtensions.IsClearButtonVisible="False"
+                        
+                       filter:DataGridExtensions.IsFilterVisible="{Binding 
+                                                                  Path=IsChecked,
+                                                                  ElementName=ShowHideFilterCheckBox, Mode=TwoWay}"
+                        
+                       ColumnHeaderStyle="{StaticResource {ComponentResourceKey 
+		                       TypeInTargetAssembly={x:Type filter:DataGridHeaderFilterControl}, 
+		                       ResourceId=DataGridHeaderFilterControlStyle}}"/>
+        <Grid x:Name="GridDown" Margin="0" Grid.Row="2"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SabaCandHTestGModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SabaCandHTestGModelStoreContainer" />
+        <Function Name="ShowConsumedWaterForVee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Filter" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ShowVEEConsumedWaterForVEE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Filter" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SabaCandHTestGModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SabaCandHTestGEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="ShowConsumedWaterForVee" ReturnType="Collection(SabaCandHTestGModel.ShowConsumedWaterForVee_Result)">
+            <Parameter Name="Filter" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ShowVEEConsumedWaterForVEE" ReturnType="Collection(SabaCandHTestGModel.ShowVEEConsumedWaterForVEE_Result)">
+            <Parameter Name="Filter" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="ShowConsumedWaterForVee_Result">
+          <Property Type="String" Name="MeterNumber" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ReadDate" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="TotalWater1" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="String" Name="W1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W13" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W14" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W15" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W16" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W17" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W18" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W19" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W20" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W21" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W22" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W23" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="W24" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow6" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow7" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow8" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow9" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow10" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow13" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow14" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow15" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow16" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow17" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow18" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow19" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow20" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow21" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow22" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow23" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Flow24" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="ShowVEEConsumedWaterForVEE_Result">
+          <Property Type="String" Name="MeterNumber" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ReadDate" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="TotalWater1" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W1" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W2" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W3" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W4" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W5" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W6" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W7" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W8" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W9" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W10" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W11" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W12" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W13" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W14" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W15" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W16" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W17" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W18" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W19" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W20" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W21" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W22" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W23" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="W24" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow1" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow2" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow3" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow4" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow5" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow6" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow7" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow8" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow9" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow10" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow11" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow12" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow13" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow14" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow15" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow16" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow17" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow18" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow19" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow20" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow21" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow22" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow23" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Flow24" Nullable="true" Precision="18" Scale="3" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SabaCandHTestGModelStoreContainer" CdmEntityContainer="SabaCandHTestGEntities" >
+          <FunctionImportMapping FunctionImportName="ShowConsumedWaterForVee" FunctionName="SabaCandHTestGModel.Store.ShowConsumedWaterForVee">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SabaCandHTestGModel.ShowConsumedWaterForVee_Result">
+                <ScalarProperty Name="MeterNumber" ColumnName="MeterNumber" />
+                <ScalarProperty Name="ReadDate" ColumnName="ReadDate" />
+                <ScalarProperty Name="TotalWater1" ColumnName="TotalWater1" />
+                <ScalarProperty Name="W1" ColumnName="W1" />
+                <ScalarProperty Name="W2" ColumnName="W2" />
+                <ScalarProperty Name="W3" ColumnName="W3" />
+                <ScalarProperty Name="W4" ColumnName="W4" />
+                <ScalarProperty Name="W5" ColumnName="W5" />
+                <ScalarProperty Name="W6" ColumnName="W6" />
+                <ScalarProperty Name="W7" ColumnName="W7" />
+                <ScalarProperty Name="W8" ColumnName="W8" />
+                <ScalarProperty Name="W9" ColumnName="W9" />
+                <ScalarProperty Name="W10" ColumnName="W10" />
+                <ScalarProperty Name="W11" ColumnName="W11" />
+                <ScalarProperty Name="W12" ColumnName="W12" />
+                <ScalarProperty Name="W13" ColumnName="W13" />
+                <ScalarProperty Name="W14" ColumnName="W14" />
+                <ScalarProperty Name="W15" ColumnName="W15" />
+                <ScalarProperty Name="W16" ColumnName="W16" />
+                <ScalarProperty Name="W17" ColumnName="W17" />
+                <ScalarProperty Name="W18" ColumnName="W18" />
+                <ScalarProperty Name="W19" ColumnName="W19" />
+                <ScalarProperty Name="W20" ColumnName="W20" />
+                <ScalarProperty Name="W21" ColumnName="W21" />
+                <ScalarProperty Name="W22" ColumnName="W22" />
+                <ScalarProperty Name="W23" ColumnName="W23" />
+                <ScalarProperty Name="W24" ColumnName="W24" />
+                <ScalarProperty Name="Flow1" ColumnName="Flow1" />
+                <ScalarProperty Name="Flow2" ColumnName="Flow2" />
+                <ScalarProperty Name="Flow3" ColumnName="Flow3" />
+                <ScalarProperty Name="Flow4" ColumnName="Flow4" />
+                <ScalarProperty Name="Flow5" ColumnName="Flow5" />
+                <ScalarProperty Name="Flow6" ColumnName="Flow6" />
+                <ScalarProperty Name="Flow7" ColumnName="Flow7" />
+                <ScalarProperty Name="Flow8" ColumnName="Flow8" />
+                <ScalarProperty Name="Flow9" ColumnName="Flow9" />
+                <ScalarProperty Name="Flow10" ColumnName="Flow10" />
+                <ScalarProperty Name="Flow11" ColumnName="Flow11" />
+                <ScalarProperty Name="Flow12" ColumnName="Flow12" />
+                <ScalarProperty Name="Flow13" ColumnName="Flow13" />
+                <ScalarProperty Name="Flow14" ColumnName="Flow14" />
+                <ScalarProperty Name="Flow15" ColumnName="Flow15" />
+                <ScalarProperty Name="Flow16" ColumnName="Flow16" />
+                <ScalarProperty Name="Flow17" ColumnName="Flow17" />
+                <ScalarProperty Name="Flow18" ColumnName="Flow18" />
+                <ScalarProperty Name="Flow19" ColumnName="Flow19" />
+                <ScalarProperty Name="Flow20" ColumnName="Flow20" />
+                <ScalarProperty Name="Flow21" ColumnName="Flow21" />
+                <ScalarProperty Name="Flow22" ColumnName="Flow22" />
+                <ScalarProperty Name="Flow23" ColumnName="Flow23" />
+                <ScalarProperty Name="Flow24" ColumnName="Flow24" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ShowVEEConsumedWaterForVEE" FunctionName="SabaCandHTestGModel.Store.ShowVEEConsumedWaterForVEE">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SabaCandHTestGModel.ShowVEEConsumedWaterForVEE_Result">
+                <ScalarProperty Name="MeterNumber" ColumnName="MeterNumber" />
+                <ScalarProperty Name="ReadDate" ColumnName="ReadDate" />
+                <ScalarProperty Name="TotalWater1" ColumnName="TotalWater1" />
+                <ScalarProperty Name="W1" ColumnName="W1" />
+                <ScalarProperty Name="W2" ColumnName="W2" />
+                <ScalarProperty Name="W3" ColumnName="W3" />
+                <ScalarProperty Name="W4" ColumnName="W4" />
+                <ScalarProperty Name="W5" ColumnName="W5" />
+                <ScalarProperty Name="W6" ColumnName="W6" />
+                <ScalarProperty Name="W7" ColumnName="W7" />
+                <ScalarProperty Name="W8" ColumnName="W8" />
+                <ScalarProperty Name="W9" ColumnName="W9" />
+                <ScalarProperty Name="W10" ColumnName="W10" />
+                <ScalarProperty Name="W11" ColumnName="W11" />
+                <ScalarProperty Name="W12" ColumnName="W12" />
+                <ScalarProperty Name="W13" ColumnName="W13" />
+                <ScalarProperty Name="W14" ColumnName="W14" />
+                <ScalarProperty Name="W15" ColumnName="W15" />
+                <ScalarProperty Name="W16" ColumnName="W16" />
+                <ScalarProperty Name="W17" ColumnName="W17" />
+                <ScalarProperty Name="W18" ColumnName="W18" />
+                <ScalarProperty Name="W19" ColumnName="W19" />
+                <ScalarProperty Name="W20" ColumnName="W20" />
+                <ScalarProperty Name="W21" ColumnName="W21" />
+                <ScalarProperty Name="W22" ColumnName="W22" />
+                <ScalarProperty Name="W23" ColumnName="W23" />
+                <ScalarProperty Name="W24" ColumnName="W24" />
+                <ScalarProperty Name="Flow1" ColumnName="Flow1" />
+                <ScalarProperty Name="Flow2" ColumnName="Flow2" />
+                <ScalarProperty Name="Flow3" ColumnName="Flow3" />
+                <ScalarProperty Name="Flow4" ColumnName="Flow4" />
+                <ScalarProperty Name="Flow5" ColumnName="Flow5" />
+                <ScalarProperty Name="Flow6" ColumnName="Flow6" />
+                <ScalarProperty Name="Flow7" ColumnName="Flow7" />
+                <ScalarProperty Name="Flow8" ColumnName="Flow8" />
+                <ScalarProperty Name="Flow9" ColumnName="Flow9" />
+                <ScalarProperty Name="Flow10" ColumnName="Flow10" />
+                <ScalarProperty Name="Flow11" ColumnName="Flow11" />
+                <ScalarProperty Name="Flow12" ColumnName="Flow12" />
+                <ScalarProperty Name="Flow13" ColumnName="Flow13" />
+                <ScalarProperty Name="Flow14" ColumnName="Flow14" />
+                <ScalarProperty Name="Flow15" ColumnName="Flow15" />
+                <ScalarProperty Name="Flow16" ColumnName="Flow16" />
+                <ScalarProperty Name="Flow17" ColumnName="Flow17" />
+                <ScalarProperty Name="Flow18" ColumnName="Flow18" />
+                <ScalarProperty Name="Flow19" ColumnName="Flow19" />
+                <ScalarProperty Name="Flow20" ColumnName="Flow20" />
+                <ScalarProperty Name="Flow21" ColumnName="Flow21" />
+                <ScalarProperty Name="Flow22" ColumnName="Flow22" />
+                <ScalarProperty Name="Flow23" ColumnName="Flow23" />
+                <ScalarProperty Name="Flow24" ColumnName="Flow24" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

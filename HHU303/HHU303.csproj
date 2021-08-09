@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BDC8841D-EE5B-4E74-8C41-FFBCFF940497}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HHU303</RootNamespace>
+    <AssemblyName>HHU303</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.PortableDeviceApiLib">
+      <HintPath>Dll\Interop.PortableDeviceApiLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.PortableDeviceTypesLib">
+      <HintPath>Dll\Interop.PortableDeviceTypesLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTOEntities\ActionDTO.cs" />
+    <Compile Include="DTOEntities\AttributeDTO.cs" />
+    <Compile Include="DTOEntities\DataDTO.cs" />
+    <Compile Include="DTOEntities\HHUReadout.cs" />
+    <Compile Include="DTOEntities\LstObisDTO.cs" />
+    <Compile Include="DTOEntities\MeterReadout.cs" />
+    <Compile Include="DTOEntities\ObisDTO.cs" />
+    <Compile Include="DTOEntities\ObjectDTO.cs" />
+    <Compile Include="HHU303.cs" />
+    <Compile Include="HHU\ActiveSync.cs" />
+    <Compile Include="HHU\AutoStart.cs" />
+    <Compile Include="HHU\CFPerformanceMonitor.cs" />
+    <Compile Include="HHU\ErrorHandle.cs" />
+    <Compile Include="HHU\HHUManager.cs" />
+    <Compile Include="HHU\IDccMan.cs" />
+    <Compile Include="HHU\PerformanceStatistics.cs" />
+    <Compile Include="HHU\RAPI.cs" />
+    <Compile Include="HHU\Registry.cs" />
+    <Compile Include="HHU\SYSTEMTIME.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RsaDateTime\RsaDateTime.csproj">
+      <Project>{8fea3356-4475-443b-ade8-ba3a4300f864}</Project>
+      <Name>RsaDateTime</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DLMS\DLMS\DLMS.csproj">
+      <Project>{a19fb0a5-9aef-4865-a620-5ef21fbbb019}</Project>
+      <Name>DLMS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

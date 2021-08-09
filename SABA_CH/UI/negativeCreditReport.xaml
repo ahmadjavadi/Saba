@@ -1,0 +1,122 @@
+﻿<Window x:Class="SABA_CH.UI.negativeCreditReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit"
+        xmlns:filter="clr-namespace:DataGridFilterLibrary;assembly=DataGridFilterLibrary"
+        xmlns:persianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls"        
+        xmlns:self="clr-namespace:SABA_CH"
+        Title="negativeCreditReport" Height="642.392" Width="783.696" Activated="Window_Activated" Closing="Window_Closing" ShowInTaskbar="False" WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+        <self:DateTimeToPersianDateConverter x:Key="dateToPersianDateConverter"/>
+    </Window.Resources>
+    <Grid x:Name="MainGrid" FlowDirection="RightToLeft" Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="202"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFD7E8FC" Offset="0" />
+                <GradientStop Color="#FF95B7E8" Offset="1" />
+                <GradientStop Color="#FF96B7E8" Offset="0.987"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="608*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="GridMeter" Margin="0" Grid.Row="1" Background="White" SelectionChanged="GridMeter_SelectionChanged"
+                  filter:DataGridExtensions.UseBackgroundWorkerForFiltering="True"
+                        
+                       filter:DataGridExtensions.IsClearButtonVisible="False"
+                        
+                       filter:DataGridExtensions.IsFilterVisible="{Binding 
+                                                                  Path=IsChecked,
+                                                                  ElementName=ShowHideFilterCheckBox, Mode=TwoWay}"
+                        
+                       ColumnHeaderStyle="{StaticResource {ComponentResourceKey 
+		                       TypeInTargetAssembly={x:Type filter:DataGridHeaderFilterControl}, 
+		                       ResourceId=DataGridHeaderFilterControlStyle}}" SelectedIndex="0" AutoGenerateColumns="False" AlternatingRowBackground="#FFBEBAE0" IsReadOnly="True" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding MeterNumber}" Width="*"/>
+                <DataGridTextColumn Binding="{Binding WatersubscriptionNumber}" Width="*"/>
+                <DataGridTextColumn Binding="{Binding DossierNumber}" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Value}" Width="*"/>
+                <DataGridTextColumn Binding="{Binding debtValue}" Width="*"/>
+                <DataGridTextColumn Binding="{Binding ReadDate}" Width="*"/>
+                <DataGridTextColumn Binding="{Binding TotalcreditVal}" Width="*"/>
+                <DataGridTextColumn Binding="{Binding AnnuaCreditVal}" Width="*"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Margin="0,379,0,0" Grid.Row="1" Visibility="Hidden" Grid.ColumnSpan="2">
+            <GroupBox x:Name="CreditModes303" Header="Credit Transfer Modes" Margin="0" BorderThickness="1,0.5,0.5,0.5" Visibility="Hidden" >
+                <Grid x:Name="GridCreditTransferMode" Margin="0" Visibility="Hidden">
+                    <CheckBox Content="{Binding Object21}" Height="32" Name="chk1" Margin="10,7,0,147"  Visibility="Hidden" />
+                    <CheckBox Content="{Binding Object22}" Height="32" Name="chk2" Margin="10,47,0,118"   Visibility="Hidden"/>
+                    <CheckBox Content="{Binding Object23}" Height="32" Name="chk3" Margin="10,87,0,81"   Visibility="Hidden"/>
+                    <CheckBox Content="{Binding Object24}" Height="32" Name="chk4" Margin="10,127,0,45"  Visibility="Hidden"/>
+                    <CheckBox Content="{Binding Object25}" Name="chk5" Height="32" Margin="10,167,0,7"  Visibility="Hidden"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="CreditModes207" Header="Credit Transfer Modes" Margin="0" BorderThickness="1,0.5,0.5,0.5" Visibility="Hidden" >
+                <Grid x:Name="GridCreditTransferMode207" Margin="0" Visibility="Hidden">
+                    <CheckBox Content="{Binding Object39}" Height="32" Name="chk1207" Margin="10,7,0,147"  Visibility="Hidden"/>
+                    <CheckBox Content="{Binding Object40}" Height="32" Name="chk2207" Margin="10,47,0,118"  Visibility="Hidden"/>
+                    <CheckBox Content="{Binding Object41}" Height="32" Name="chk3207" Margin="10,87,0,81"  Visibility="Hidden"/>
+                    <CheckBox Content="{Binding Object42}" Height="32" Name="chk4207" Margin="10,127,0,45"  Visibility="Hidden"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <ToolBar FlowDirection="LeftToRight" x:Name="toolBar1" Margin="0,0,2,0" Grid.ColumnSpan="2">
+            <ToolBar.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </ToolBar.Background>
+            <Grid Background="White" Width="42">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Refresh" Grid.Row="1" FontSize="8" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                <Button  x:Name="ToolStripButtonRefresh" ToolTip="Refresh"  Click="ToolStripButtonRefresh_Click" TabIndex="11" Background="{x:Null}">
+                    <Image Source="/Saba;component/Image/refresh.png" Stretch="Fill" />
+                </Button>
+            </Grid>
+            <Grid Background="White" Width="42">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Exce" Grid.Row="1" FontSize="8" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                <Button  x:Name="ToolStripButtonExport" ToolTip="Export To Excel"  Visibility="{Binding CanImportFromFile, Converter={StaticResource BoolToVis}}" TabIndex="12" Click="ToolStripButtonExport_Click" Background="{x:Null}">
+                    <Image Source="/Saba;component/Image/application_vnd_ms_excel.ico" Stretch="Fill" />
+                </Button>
+            </Grid>
+            <Separator Margin="0,5,0,-5" />
+        </ToolBar>
+        <Grid Margin="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="39"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblFromDate" Content="{Binding Object45}" HorizontalAlignment="Left" Height="30" Margin="7,4,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <Label x:Name="lblToDate" Content="{Binding Object46}" HorizontalAlignment="Left" Height="30" Margin="7,4,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+            <Custom:DatePicker Margin="50,6,10,7" x:Name="datePickerStarten"  Grid.Row="2"   />
+            <Custom:DatePicker Margin="50,9,10,5" x:Name="datePickerEnden"  Height="26" Grid.Row="3"   />
+            <persianDateControls:PersianDatePicker  SelectedDate="{Binding SelectedDate, ElementName=datePicker, Converter={StaticResource dateToPersianDateConverter}, Mode=TwoWay}"  Background="{x:Static SystemColors.ControlLightLightBrush}" HorizontalAlignment="Left" Margin="50,6,0,0" x:Name="datePickerStart" VerticalAlignment="Top" Width="141" Height="24" Grid.Row="2"  />
+            <persianDateControls:PersianDatePicker  SelectedDate="{Binding SelectedDate, ElementName=datePicker, Converter={StaticResource dateToPersianDateConverter}, Mode=TwoWay}"  Background="{x:Static SystemColors.ControlLightLightBrush}" HorizontalAlignment="Left" Margin="50,9,0,0" x:Name="datePickerEnd" VerticalAlignment="Top" Width="141" Height="24" Grid.Row="3"  />
+
+            <CheckBox x:Name="chkDate" Content="{Binding Object47}" Margin="0" Grid.Row="1" Width="Auto" Padding="6,0,0,0" Height="22" Checked="chkDate_Checked" Unchecked="chkDate_Unchecked"/>
+
+        </Grid>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,217 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit"
+        xmlns:DataGridFilterLibrary="clr-namespace:DataGridFilterLibrary;assembly=DataGridFilterLibrary"
+        xmlns:filter="clr-namespace:DataGridFilterLibrary;assembly=DataGridFilterLibrary"
+        xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"        
+        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+        xmlns:persianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls"
+        xmlns:self="clr-namespace:SABA_CH"
+        x:Class="SABA_CH.UI.WaterManagementReport"
+        
+        Title="WaterManagementReport" Height="639" Width="796" HorizontalAlignment="Center" VerticalAlignment="Center" Activated="Window_Activated" Closing="Window_Closing" ShowInTaskbar="False" SizeChanged="Window_SizeChanged">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+        <self:DateTimeToPersianDateConverter x:Key="dateToPersianDateConverter"/>
+    </Window.Resources>
+    <Grid x:Name="MainGrid" Margin="0" FlowDirection="RightToLeft">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="31"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFD7E8FC" Offset="0" />
+                <GradientStop Color="#FF95B7E8" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="{Binding Object3}" HorizontalAlignment="Left" Height="22" Margin="10,5,0,0" VerticalAlignment="Top" Padding="0" Width="Auto" Grid.Row="1"/>
+        <Custom:DatePicker HorizontalAlignment="Left" Margin="94,5,0,0" x:Name="datePickerStartold" VerticalAlignment="Top" Width="141" SelectedDateChanged="datePickerStart_SelectedDateChanged" Height="24" Grid.Row="1" Visibility="Hidden"   />
+        <persianDateControls:PersianDatePicker  SelectedDate="{Binding SelectedDate, ElementName=datePicker, Converter={StaticResource dateToPersianDateConverter}, Mode=TwoWay}"  Background="{x:Static SystemColors.ControlLightLightBrush}" HorizontalAlignment="Left" Margin="94,5,0,0" x:Name="datePickerStart" VerticalAlignment="Top" Width="141" Height="24" Grid.Row="1" SelectedDateChanged="datePickerStart_SelectedDateChanged_1" />
+        <persianDateControls:PersianDatePicker  SelectedDate="{Binding SelectedDate, ElementName=datePicker, Converter={StaticResource dateToPersianDateConverter}, Mode=TwoWay}"  Background="{x:Static SystemColors.ControlLightLightBrush}" HorizontalAlignment="Left" Margin="373,5,0,0" x:Name="datePickerEnd" VerticalAlignment="Top" Width="141" Height="24" Grid.Row="1" SelectedDateChanged="datePickerEnd_SelectedDateChanged" />
+        
+        <Custom:DatePicker HorizontalAlignment="Left" Margin="94,3,0,0" x:Name="datePickerStarten" VerticalAlignment="Top" Width="141" Visibility="Hidden" Height="24" SelectedDateChanged="datePickerStart_SelectedDateChanged" Grid.Row="1"   />
+        <Custom:DatePicker HorizontalAlignment="Left" Margin="373,5,0,0" x:Name="datePickerEnden" VerticalAlignment="Top" Width="141" Visibility="Hidden" Height="24" SelectedDateChanged="datePickerStart_SelectedDateChanged"  Grid.Row="1"   />
+
+        <Label Content="{Binding Object4}" HorizontalAlignment="Left" Height="22" Margin="290,5,0,0" VerticalAlignment="Top" Padding="0" Width="Auto" Grid.Row="1"/>
+        <ToolBar FlowDirection="LeftToRight" x:Name="toolBar1" Margin="0">
+            <ToolBar.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </ToolBar.Background>
+            <Grid Background="White" Width="42">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Refresh" Grid.Row="1" FontSize="8" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                <Button  x:Name="ToolStripButtonRefresh" ToolTip="Refresh" Click="ToolStripButtonRefresh_Click" TabIndex="11" Background="{x:Null}">
+                    <Image Source="/Saba;component/Image/refresh.png" Stretch="Fill" />
+                </Button>
+            </Grid>
+            <Grid Background="White" Width="42">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Excel" Grid.Row="1" FontSize="8" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                <Button x:Name="ToolStripButtonExport" ToolTip="Export To Excel"   TabIndex="12" Click="ToolStripButtonExport_Click" Background="{x:Null}">
+                    <Image Source="/Saba;component/Image/application_vnd_ms_excel.ico" Stretch="Fill" />
+                </Button>
+            </Grid>
+            <Separator Margin="0,5,0,-5" />
+        </ToolBar>
+
+        <TabControl x:Name="TabControlMain" Margin="0" Grid.Row="2">
+            <TabItem x:Name="TabItemSum"  Margin="0">
+                <Grid>
+                    <DataGrid x:Name="GridSumGroup" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="White" IsReadOnly="True"
+						Margin="0"  AlternatingRowBackground="#FFBEBAE0" AutoGenerateColumns="False"  >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding ConsumedDate}" Width="*" />
+                            <DataGridTextColumn Binding="{Binding W}"  Width="*"/>
+                            <DataGridTextColumn Binding="{Binding WT}"  Width="*"/>
+                            <!--<DataGridTextColumn Binding="{Binding D}"  Width="*"/>-->
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="ReportTabItem"  Margin="0" HorizontalAlignment="Left" >
+                <Grid Margin="0,0,0,0">
+                    <DataGrid x:Name="GridMain" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="White" IsReadOnly="True"
+						Margin="0"  AlternatingRowBackground="#FFBEBAE0" AutoGenerateColumns="False" 
+                              filter:DataGridExtensions.UseBackgroundWorkerForFiltering="True"
+                        
+                       filter:DataGridExtensions.IsClearButtonVisible="False"
+                        
+                       filter:DataGridExtensions.IsFilterVisible="{Binding 
+                                                                  Path=IsChecked,
+                                                                  ElementName=ShowHideFilterCheckBox, Mode=TwoWay}"
+                        
+                       ColumnHeaderStyle="{StaticResource {ComponentResourceKey 
+		                       TypeInTargetAssembly={x:Type filter:DataGridHeaderFilterControl}, 
+		                       ResourceId=DataGridHeaderFilterControlStyle}}" FontWeight="Normal">
+                        <DataGrid.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Name}" FontWeight="Bold" Padding="3"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GroupStyle.HeaderTemplate>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="{x:Type GroupItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                    <Expander IsExpanded="True" Background="#FFA23994" Foreground="#FF101313"   FontFamily="Tahoma"   FontWeight="Bold">
+                                                        <Expander.Header>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Text="{Binding Name}"   FontFamily="Tahoma"   FontWeight="Bold" FontSize="14" Foreground="White" />
+                                                            </StackPanel>
+                                                        </Expander.Header>
+                                                        <ItemsPresenter />
+                                                    </Expander>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                        </DataGrid.GroupStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding ConsumedDate}" Width="*" />
+                            <DataGridTextColumn Binding="{Binding w}"  Width="*"/>
+                            <DataGridTextColumn Binding="{Binding WT}"  Width="*"/>
+                            <!--<DataGridTextColumn Binding="{Binding D}"  Width="*"/>-->
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="ChartTabItem" Margin="0" Visibility="Collapsed">
+                <Grid>
+                    <dxc:ChartControl x:Name="chart1" Margin="0"  DataSource="gh" FlowDirection="LeftToRight" BorderBrush="#FF6C265C"  CrosshairEnabled="True" >
+                        <dxc:ChartControl.Legend>
+                            <dxc:Legend/>
+                        </dxc:ChartControl.Legend>
+                        <!--<dxc:ChartControl.ToolTipOptions>
+                            <dxc:ToolTipOptions ShowForPoints="False" ShowForSeries="True" />
+                        </dxc:ChartControl.ToolTipOptions>-->
+                        <dxc:ChartControl.CrosshairOptions>
+                            <dxc:CrosshairOptions ShowArgumentLine="True" 
+                                      ShowValueLabels="True" ShowValueLine="True" 
+                                      ShowCrosshairLabels="True" ShowArgumentLabels="True" />
+                        </dxc:ChartControl.CrosshairOptions>
+                        <dxc:XYDiagram2D x:Name="diagram1" Width="749" EnableAxisXNavigation="True" DataContext="ShowManagmentConsumedWaterPivot._lstShowManagmentConsumedWaterPivot">
+                            <dxc:LineSeries2D x:Name="___No_Name_" DisplayName="" ArgumentDataMember="ConsumedDate" ValueDataMember="WT"   ToolTip="{Binding contmeterid}">
+                                <!--<dxc:LineSeries2D.ToolTipSeriesTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Border Background="Bisque"/>
+                                            <Label Foreground="Green" FontStyle="Italic" 
+                                       FontSize="14" Content="{Binding Path=contmeterid}" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </dxc:LineSeries2D.ToolTipSeriesTemplate>-->
+                                <dxc:LineSeries2D.CrosshairLabelTemplate>
+                                    <DataTemplate >
+                                        <Grid >
+                                            <Border BorderThickness="2" CornerRadius="9" >
+                                                <Border.Background>
+                                                    <SolidColorBrush Color="AliceBlue" />
+                                                </Border.Background>
+                                                <Label BorderThickness="2" BorderBrush="Brown" FontStyle="Italic" 
+                                           Content="{Binding Path=ShowManagmentConsumedWaterPivot_Result.contmeterid}" Padding="5,1,5,1.5" 
+                                           Foreground="Red" FontSize="14"/>
+                                            </Border>
+                                        </Grid>
+                                    </DataTemplate>
+                                </dxc:LineSeries2D.CrosshairLabelTemplate>
+                            </dxc:LineSeries2D>
+                        </dxc:XYDiagram2D>
+                    </dxc:ChartControl>
+
+
+                    <!--<dxc:ChartControl x:Name="chart1" Margin="0"  DataSource="gh" FlowDirection="LeftToRight" BorderBrush="#FF6C265C">
+                            <dxc:ChartControl.IsManipulationEnabled>True</dxc:ChartControl.IsManipulationEnabled>
+                            <dxc:ChartControl.Diagram>
+                                <dxc:XYDiagram2D EnableAxisXNavigation="True">
+                                    <dxc:XYDiagram2D.AxisX>
+                                        <dxc:AxisX2D x:Name="AxisX">
+                                            <dxc:AxisX2D.NumericScaleOptions>
+                                                <dxc:AutomaticNumericScaleOptions/>
+                                            </dxc:AxisX2D.NumericScaleOptions>
+                                        </dxc:AxisX2D>
+                                    </dxc:XYDiagram2D.AxisX>
+                                    <dxc:XYDiagram2D.Series>
+                                    <dxc:LineSeries2D  DisplayName="" ArgumentDataMember="ConsumedDate" ValueDataMember="W"
+                                            ArgumentScaleType="Numerical"  MarkerVisible="False" 
+                                            CrosshairLabelPattern="{}{A} : {V:n2}">
+                                        </dxc:LineSeries2D>
+                                    </dxc:XYDiagram2D.Series>
+                                </dxc:XYDiagram2D>
+                            </dxc:ChartControl.Diagram>
+                            <dxc:ChartControl.Legend>
+                                <dxc:Legend HorizontalPosition="Right" VerticalPosition="Top"/>
+                            </dxc:ChartControl.Legend>
+                            <dxc:ChartControl.Titles>
+                                <dxc:Title HorizontalAlignment="Center">
+                                    <dxc:Title.Content>
+                                        <TextBlock Margin="0,6,0,3" Text="{Binding Path=Title}"/>
+                                    </dxc:Title.Content>
+                                </dxc:Title>
+                            </dxc:ChartControl.Titles>
+                        </dxc:ChartControl>-->
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+</Window>

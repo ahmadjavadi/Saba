@@ -1,0 +1,8 @@
+﻿<Window x:Class="SABA_CH.UI.TemplateforReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TemplateforReport" Height="582.09" Width="855.223">
+    <Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="WpfApplication_SABA.NewSource"
+	x:Name="Meter"
+	Title="کنتور جدید"
+	Topmost="True"
+	WindowStartupLocation="CenterOwner"
+	Width="579" Height="481" Activated="Window_Activated" Closing="Window_Closing" MaxWidth="700" MaxHeight="550" FontFamily="Nazanin">
+
+	<Grid x:Name="LayoutRoot">
+		<Grid.Background>
+			<SolidColorBrush Color="{DynamicResource B1}"/>
+		</Grid.Background>
+	</Grid>
+</Window>

@@ -1,0 +1,81 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:DataGridFilterLibrary="clr-namespace:DataGridFilterLibrary;assembly=DataGridFilterLibrary"
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls"
+        xmlns:l="clr-namespace:SABA_CH.DataBase"
+        xmlns:SABA_CH="clr-namespace:SABA_CH" 
+        xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit"
+        x:Class="SABA_CH.UI.ExportToExcel" Title="ExportToExcel" Height="595" Width="777" Activated="Window_Activated" Closing="Window_Closing" ShowInTaskbar="False" Loaded="Window_Loaded"   FontFamily="Tahoma"   WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <SABA_CH:DateTimeToPersianDateConverter x:Key="dateToPersianDateConverter"/>
+        
+    </Window.Resources>
+    <Grid x:Name="MainGrid" FlowDirection="RightToLeft">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="41"/>
+            <RowDefinition Height="187*"/>
+            <RowDefinition Height="274*"/>
+            <RowDefinition Height="63"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFD7E8FC" Offset="0" />
+                <GradientStop Color="#FF95B7E8" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+
+        <DataGrid x:Name="GridMain"   FontFamily="Tahoma"   FlowDirection="RightToLeft" AutoGenerateColumns="False" IsReadOnly="True"
+			SelectionChanged="GridMain_SelectionChanged" SelectedIndex="0" Background="White" AlternatingRowBackground="#FFBEBAE0" 
+			DataGridFilterLibrary:DataGridExtensions.UseBackgroundWorkerForFiltering="True"
+                        
+			DataGridFilterLibrary:DataGridExtensions.IsClearButtonVisible="False"
+                        
+			DataGridFilterLibrary:DataGridExtensions.IsFilterVisible="{Binding IsChecked, ElementName=ShowHideFilterCheckBox, Mode=TwoWay}"
+                        
+			ColumnHeaderStyle="{StaticResource {ComponentResourceKey ResourceId=DataGridHeaderFilterControlStyle, TypeInTargetAssembly={x:Type DataGridFilterLibrary:DataGridHeaderFilterControl}}}" Margin="0" FontSize="14" MouseDoubleClick="GridMain_MouseDoubleClick" Grid.Row="1"  >
+            <DataGrid.Columns >
+                <!--<DataGridHyperlinkColumn Binding="{Binding ReportName}" Width="*">
+                    <DataGridHyperlinkColumn.ElementStyle>
+                        <Style TargetType="TextBlock" >
+                            <EventSetter  Event="Hyperlink.Click" Handler="Hyperlink_Click"  />
+                        </Style>
+                    </DataGridHyperlinkColumn.ElementStyle>
+                </DataGridHyperlinkColumn>-->
+                <DataGridTextColumn Binding="{Binding ReportName}" Width="*"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button Content="{Binding Object2}" HorizontalAlignment="Right" Margin="0,7,10,0" Grid.Row="3" VerticalAlignment="Top" Height="25" Width="131" Click="Button_Click"/>
+        <DataGrid x:Name="ReadDateGrid"   FontFamily="Tahoma"   FlowDirection="RightToLeft" AutoGenerateColumns="False" IsReadOnly="True"
+			SelectionChanged="GridMain_SelectionChanged" Background="White" AlternatingRowBackground="#FFBEBAE0" 
+			DataGridFilterLibrary:DataGridExtensions.UseBackgroundWorkerForFiltering="True"
+                        
+			DataGridFilterLibrary:DataGridExtensions.IsClearButtonVisible="False"
+                        
+			DataGridFilterLibrary:DataGridExtensions.IsFilterVisible="{Binding IsChecked, ElementName=ShowHideFilterCheckBox, Mode=TwoWay}"
+                        
+			ColumnHeaderStyle="{StaticResource {ComponentResourceKey ResourceId=DataGridHeaderFilterControlStyle, TypeInTargetAssembly={x:Type DataGridFilterLibrary:DataGridHeaderFilterControl}}}" Margin="0" FontSize="14" Grid.Row="2">
+            <DataGrid.Columns >
+                <DataGridTextColumn Binding="{Binding ReadDate}" Width="*"/>
+                <DataGridTextColumn Binding="{Binding TransferDate}" Width="*"/>
+                <DataGridTextColumn Binding="{Binding SourceTypeName}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblFromDate" Content="{Binding Object9}" HorizontalAlignment="Left" Height="30" Margin="15,5,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="lblToDate" Margin="232,5,0,9" HorizontalAlignment="Left" Content="{Binding Object10}"/>
+        <Custom:DatePicker  x:Name="datePickerStarten"   HorizontalAlignment="Left" Margin="75,8,0,0" VerticalAlignment="Top" Width="141" Height="24"    />
+        <Custom:DatePicker x:Name="datePickerEnden"  HorizontalAlignment="Left" Margin="288,10,0,0"  VerticalAlignment="Top" Width="141" Height="24"   />
+        <PersianDateControls:PersianDatePicker  SelectedDate="{Binding SelectedDate, Converter={StaticResource dateToPersianDateConverter}, ElementName=datePicker, Mode=TwoWay}"  Background="{x:Static SystemColors.ControlLightLightBrush}" HorizontalAlignment="Left" Margin="75,7,0,0" x:Name="datePickerStart" VerticalAlignment="Top" Width="141" Height="24" SelectedDateChanged="datePickerStart_SelectedDateChanged" PreviewTextInput="datePickerStart_PreviewTextInput"  />
+        <PersianDateControls:PersianDatePicker  SelectedDate="{Binding SelectedDate, Converter={StaticResource dateToPersianDateConverter}, ElementName=datePicker, Mode=TwoWay}"  Background="{x:Static SystemColors.ControlLightLightBrush}" HorizontalAlignment="Left" Margin="288,8,0,0" x:Name="datePickerEnd" VerticalAlignment="Top" Width="141" Height="24" SelectedDateChanged="datePickerStart_SelectedDateChanged" PreviewTextInput="datePickerEnd_PreviewTextInput"  />
+        <Button x:Name="BtnSelectAll" Content="{Binding Object11}" HorizontalAlignment="Right" Margin="0,7,173,0" Grid.Row="3" VerticalAlignment="Top" Height="25" Width="131" Click="BtnSelectAll_Click" />
+        <!--<Label x:Name="PleaseWateLabel" Content="{Binding Message41}" HorizontalAlignment="Left" Height="91" Margin="217,55,0,0" VerticalAlignment="Top" Width="325" FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFD3E5E6" Grid.Row="1"/>-->
+
+    </Grid>
+</Window>

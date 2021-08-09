@@ -1,0 +1,1562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0049C56E-97F9-4B91-9410-9E1943E3D578}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SABA_CH</RootNamespace>
+    <AssemblyName>Saba</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fujitsu_siemens_pocket_loox_t830.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SABA_CH.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Neuro, Version=1.6.1.0, Culture=neutral, PublicKeyToken=31df34efda00f95d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\AForge.Neuro.dll</HintPath>
+    </Reference>
+    <Reference Include="Card Framework, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Card Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Card Reader, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Card Reader.dll</HintPath>
+    </Reference>
+    <Reference Include="ColorPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\ColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Data Access, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Data Access.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridFilterLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\DataGridFilterLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DataTransfer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\DataTransfer.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\DevExpress.Charts.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\DevExpress.Data.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\DevExpress.Mvvm.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\DevExpress.Printing.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="devexpress.xpf.charts.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\devexpress.xpf.charts.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\DevExpress.Xpf.Core.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\DevExpress.Xpf.Printing.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=3.1.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Generics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Generics.dll</HintPath>
+    </Reference>
+    <Reference Include="ICube.EzHdlc, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\ICube.EzHdlc.dll</HintPath>
+    </Reference>
+    <Reference Include="ICube.XmlPdu, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\ICube.XmlPdu.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.PortableDeviceTypesLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Dlls\Interop.PortableDeviceTypesLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Dmf, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Microsoft.SqlServer.Dmf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SQL Server\130\SDK\Assemblies\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ServiceBrokerEnum, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Microsoft.SqlServer.ServiceBrokerEnum.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SQL Server\130\SDK\Assemblies\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SqlEnum, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Microsoft.SqlServer.SqlEnum.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PersianDate, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\PersianDate.dll</HintPath>
+    </Reference>
+    <Reference Include="PersianDateControls, Version=1.2.5531.28561, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\PersianDateControls.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore.4.0.0.0.Fakes, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0ae41878053f6703, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\PresentationCore.4.0.0.0.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QuickGraph, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Data, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=3681435cabd17ad2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\QuickGraph.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Graphviz, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\QuickGraph.Graphviz.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="system.drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="system.windows.controls.datavisualization.toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\system.windows.controls.datavisualization.toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationTypes">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\WPFToolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Compile Include="Colorpicker.xaml.cs">
+      <DependentUpon>Colorpicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\EnumDescriptionConverter.cs" />
+    <Compile Include="DataBase\AccessUserToMeter.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\AnnualCredit.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Area.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Button.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ButtonAccess.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Card.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\CardToMeter.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Catchment.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ChangeDB.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\City.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ConsumedActiveEnergy.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ConsumedMaxDemand.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ConsumedWater.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Country.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\CreateTokenByDongle.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Credit.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Credit303.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Curve.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Customer.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\DangelInfo.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\DataBaseManager.cs" />
+    <Compile Include="DataBase\DataBasesInfo.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\DateOfRead.cs" />
+    <Compile Include="DataBase\DeviceModel.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\DeviceType.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\EOffice.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Error.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ESubOffice.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\FixedOBI.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Group.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\GroupsMeter.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\GroupToProvince.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\HashToGroup.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Language.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Location.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\MaxReadDateView.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\MessageText.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Meter.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\MeterError.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\MeterErrorView.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\MeterShutdownInterval.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\MeterToCustomer.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\MeterToGroup.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Modem.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\MonthName.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\OBISS.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\OBISToReport.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\OBISToSoftversion.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\OBISType.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\OBISUnit.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\OBISValueDetail.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\OBISValueHeader.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ObjectofWindow.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Office.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\OldOBISs.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\PivotTable.cs" />
+    <Compile Include="DataBase\Plain.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Province.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\RegionalOffice.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\regulationRule.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Report.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\SabaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SabaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\SabaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\SabaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SabaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowALLCardsTOMeters_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowAllCreditTokenWithNecessary_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowAreas_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowButtonAccess_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowCardTOMeter_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowCatchments_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowChangeDB_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowCities_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowConsumedactiveenergypivot_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowConsumedActiveEnergy_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowConsumedatariffctiveenergypivot_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowConsumedWater207_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowConsumedwaterColumnHeader207_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowConsumedwaterDetail207_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowConsumedWaterForVee303_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowConsumedWaterForVee_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowConsumedWaterPivot_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowConsumedWater_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowCountries_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowCredit303_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowCurve_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowCustomerReport_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowCustomers_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowDangelInfo_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowDataBasesInfo_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowDeviceModelandSoftversion_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowDeviceModel_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowDeviceType_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowDiatinctOBISs_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowEOffice_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\showErrorControlReportNew_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\showErrorControlReport_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowESubOffice_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\showFilterforNominalDemandReport_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowGroups_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowHashToGroup_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowLanguage_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowLocations_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowManagmentConsumedactiveenergypivot_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowManagmentConsumedWaterPivot_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowMessageText_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowMeterShutdownInterval_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowMeterToCustomer_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowMeterToGroup_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowMeter_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowModem_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowNegativeCredit_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowNominalDemandViolation_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowOBISsDesc_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowOBISs_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowOBISToExcel_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowOBISToReport_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowOBISTypeToReport_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowOBISType_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowOBISUnits_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowOBISValueDetail_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowOBISValueHeader_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowOffice_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowPlains_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowProvinces_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowReportOBISValueDetails_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowReports_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowSoftversionToDeviceModel_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowSubOffice_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowToken_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowTranslateofLable_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowTranslateofMessage_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowUsers_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowUserToGroup_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowVEEConsumedWaterForVEE_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowVeeConsumedWater_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowVEEValue_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ShowWindows_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\SoftversionToDeviceModel.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\SourceType.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\sp_helpdiagrams_Result.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\SQLSPS.cs" />
+    <Compile Include="DataBase\StatusOBISsDesc.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\SubOffice.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\sysdiagram.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\TempMeter1.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\TempSaba.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Token.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\TokenFromDangle.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Translate.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UnitGroup.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\User.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UserToGroup.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\VeeConsumedWater.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ViewModel.cs" />
+    <Compile Include="DataBase\Window.cs">
+      <DependentUpon>SabaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTOEntities\ActionDTO.cs" />
+    <Compile Include="DTOEntities\AttributeDTO.cs" />
+    <Compile Include="DTOEntities\DataDTO.cs" />
+    <Compile Include="DTOEntities\LstObisDTO.cs" />
+    <Compile Include="DTOEntities\ObisDTO.cs" />
+    <Compile Include="DTOEntities\ObjectDTO.cs" />
+    <Compile Include="Enums\CreditTypes.cs" />
+    <Compile Include="Generator\DataContextHelper.cs" />
+    <Compile Include="Generator\DescriptionHelper.cs" />
+    <Compile Include="Generator\DgmlHelper.cs" />
+    <Compile Include="Generator\Generator.cs" />
+    <Compile Include="Generator\Helper.cs" />
+    <Compile Include="Generator\IGenerator.cs" />
+    <Compile Include="Generator\ISqlCeHelper.cs" />
+    <Compile Include="Generator\RepositoryHelper.cs" />
+    <Compile Include="Generator\SqlCeDiff.cs" />
+    <Compile Include="Generator\SqlCeHelper.cs" />
+    <Compile Include="Generator\SqlCeReplicationHelper.cs" />
+    <Compile Include="Global\CityCardCodeStatus.cs" />
+    <Compile Include="Global\CommonData.cs" />
+    <Compile Include="Global\ConsumedOBIS.cs" />
+    <Compile Include="Global\CryptorEngine.cs" />
+    <Compile Include="Global\DateTimeToPersianDateConverter.cs" />
+    <Compile Include="Global\ExcelREport.cs" />
+    <Compile Include="Global\ExcelSerializer.cs" />
+    <Compile Include="Global\ExcelSerializernew.cs" />
+    <Compile Include="Global\ExportToExcel.cs" />
+    <Compile Include="Global\ExtensionMethods.cs" />
+    <Compile Include="Global\NumericConverter.cs" />
+    <Compile Include="Global\Scripts.cs" />
+    <Compile Include="Global\Setting.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Column.cs" />
+    <Compile Include="Models\ColumnList.cs" />
+    <Compile Include="Models\Constraint.cs" />
+    <Compile Include="Models\DbDescription.cs" />
+    <Compile Include="Models\Index.cs" />
+    <Compile Include="Models\PrimaryKey.cs" />
+    <Compile Include="Models\Trigger.cs" />
+    <Compile Include="Models\View.cs" />
+    <Compile Include="Models\YesNoOptionEnum.cs" />
+    <Compile Include="Repositories\DBRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\ServerDBRepository.cs" />
+    <Compile Include="SampleData\DataWater\DataWater.xaml.cs">
+      <DependentUpon>DataWater.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\MainWindow\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\MoshakhasatKontor\MoshakhasatKontor.xaml.cs">
+      <DependentUpon>MoshakhasatKontor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\newgroup\newgroup.xaml.cs">
+      <DependentUpon>newgroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\NewMeter\NewMeter.xaml.cs">
+      <DependentUpon>NewMeter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\OBIS\OBIS.xaml.cs">
+      <DependentUpon>OBIS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\PublicBargh\PublicBargh.xaml.cs">
+      <DependentUpon>PublicBargh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\PublicRoydad\PublicRoydad.xaml.cs">
+      <DependentUpon>PublicRoydad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\RActiveEng\RActiveEng.xaml.cs">
+      <DependentUpon>RActiveEng.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\SampleDataSource1\SampleDataSource1.xaml.cs">
+      <DependentUpon>SampleDataSource1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\SetshowInfo\SetshowInfo.xaml.cs">
+      <DependentUpon>SetshowInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\Tarefeh\Tarefeh.xaml.cs">
+      <DependentUpon>Tarefeh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\TestShowInfo2\TestShowInfo2.xaml.cs">
+      <DependentUpon>TestShowInfo2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\TestshowInfo\TestshowInfo.xaml.cs">
+      <DependentUpon>TestshowInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\Tree\Tree.xaml.cs">
+      <DependentUpon>Tree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\UsedElec1\UsedElec1.xaml.cs">
+      <DependentUpon>UsedElec1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\UseElec\UseElec.xaml.cs">
+      <DependentUpon>UseElec.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\UseWater\UseWater.xaml.cs">
+      <DependentUpon>UseWater.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\منحنی\منحنی.xaml.cs">
+      <DependentUpon>منحنی.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetPermissionsforUser.xaml.cs" />
+    <Compile Include="Token\CalendarConvert.cs" />
+    <Compile Include="Token\SerialPortInterface.cs" />
+    <Compile Include="Token\ShowTokenMessage.xaml.cs">
+      <DependentUpon>ShowTokenMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Token\Token.cs" />
+    <Compile Include="UI\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ActiveSoftwareWindow.xaml.cs">
+      <DependentUpon>ActiveSoftwareWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CardInfoReceive.xaml.cs" />
+    <Compile Include="UI\CardsToMeters.xaml.cs">
+      <DependentUpon>CardsToMeters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CardToMeter.xaml.cs">
+      <DependentUpon>CardToMeter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ClassControl.cs" />
+    <Compile Include="UI\ClosableTab.cs" />
+    <Compile Include="UI\CloseableHeader.xaml.cs" />
+    <Compile Include="UI\clsdatasource.cs" />
+    <Compile Include="UI\CreditToMeter.xaml.cs">
+      <DependentUpon>CreditToMeter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Customers.xaml.cs">
+      <DependentUpon>Customers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ErrorControlForSingleMeter.xaml.cs">
+      <DependentUpon>ErrorControlForSingleMeter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ErrorControlReport.xaml.cs">
+      <DependentUpon>ErrorControlReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExportToExcel.xaml.cs">
+      <DependentUpon>ExportToExcel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HHUInfoReceive.xaml.cs">
+      <DependentUpon>HHUInfoReceive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImportDataFromDLMSClient.xaml.cs">
+      <DependentUpon>ImportDataFromDLMSClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImportDataFromSabaCandH.xaml.cs">
+      <DependentUpon>ImportDataFromSabaCandH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImportDataFromSmartCardReader.xaml.cs">
+      <DependentUpon>ImportDataFromSmartCardReader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImportDataFromSQLCe.xaml.cs">
+      <DependentUpon>ImportDataFromSQLCe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImportFromSABAPC.xaml.cs">
+      <DependentUpon>ImportFromSABAPC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Information Show Regulation.xaml.cs" />
+    <Compile Include="UI\IssuanceCard.xaml.cs" />
+    <Compile Include="UI\LstOBISDTO.cs" />
+    <Compile Include="UI\ManagementObjectSearcher.cs" />
+    <Compile Include="UI\Meters.xaml.cs" />
+    <Compile Include="UI\Modems.xaml.cs">
+      <DependentUpon>Modems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MyConverter.cs" />
+    <Compile Include="UI\negativeCreditReport.xaml.cs">
+      <DependentUpon>negativeCreditReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewGroup.xaml.cs" />
+    <Compile Include="UI\NewObis.xaml.cs" />
+    <Compile Include="UI\NewUser.xaml.cs">
+      <DependentUpon>NewUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NominalDemandViolationReport.xaml.cs">
+      <DependentUpon>NominalDemandViolationReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PowerManagmentReport.xaml.cs" />
+    <Compile Include="UI\SABAPCsCLASS.cs" />
+    <Compile Include="UI\Select.xaml.cs">
+      <DependentUpon>Select.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SelectDataTypeForExportToExcel.xaml.cs">
+      <DependentUpon>SelectDataTypeForExportToExcel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ShowCardData.xaml.cs">
+      <DependentUpon>ShowCardData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Simple.xaml.cs">
+      <DependentUpon>Simple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SplashScreenView.xaml.cs">
+      <DependentUpon>SplashScreenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SwitchoverMeter.xaml.cs">
+      <DependentUpon>SwitchoverMeter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TemplateforReport.xaml.cs">
+      <DependentUpon>TemplateforReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TimeControl.xaml.cs" />
+    <Compile Include="UI\toolbar.xaml.cs" />
+    <Compile Include="UI\DeviceModel.xaml.cs">
+      <DependentUpon>DeviceModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserToGroup.xaml.cs">
+      <DependentUpon>UserToGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WaterManagementReport.xaml.cs">
+      <DependentUpon>WaterManagementReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WaterPublicInfo.xaml.cs" />
+    <Compile Include="VEEClasses\VeeMeterData.cs" />
+    <Compile Include="VEEClasses\WaterConsumed.cs" />
+    <Compile Include="ViewModes\Core\PropertyNotificationObject.cs" />
+    <Compile Include="ViewModes\Core\RelayCommand.cs" />
+    <Compile Include="ViewModes\Core\ViewModelBase.cs" />
+    <Compile Include="ViewModes\Credit\CreditVM.cs" />
+    <Compile Include="ViewModes\MeterShutdownIntervalVm.cs" />
+    <Compile Include="Models\WaterSubscriberGrid.cs" />
+    <Compile Include="Views\MeterShutdownInterval.xaml.cs">
+      <DependentUpon>MeterShutdownInterval.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WaitingForm.xaml.cs">
+      <DependentUpon>WaitingForm.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Colorpicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SampleData\DataWater\DataWater.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\MainWindow\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\MoshakhasatKontor\MoshakhasatKontor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\newgroup\newgroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\NewMeter\NewMeter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\OBIS\OBIS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\PublicBargh\PublicBargh.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\PublicRoydad\PublicRoydad.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\RActiveEng\RActiveEng.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\SampleDataSource1\SampleDataSource1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\SetshowInfo\SetshowInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\Tarefeh\Tarefeh.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\TestShowInfo2\TestShowInfo2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\TestshowInfo\TestshowInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\Tree\Tree.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\UsedElec1\UsedElec1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\UseElec\UseElec.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\UseWater\UseWater.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\منحنی\منحنی.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SetPermissionsforUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Skins\BureauBlack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Skins\BureauBlue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Skins\ExpressionDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Skins\ExpressionLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Skins\None.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Skins\ShinyBlue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Skins\ShinyRed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Skins\WhistlerBlue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Token\ShowTokenMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ActiveSoftwareWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\CardInfoReceive.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\CardsToMeters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\CardToMeter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\CloseableHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\CreditToMeter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Customers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ErrorControlForSingleMeter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ErrorControlReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ExportToExcel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\HHUInfoReceive.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ImportDataFromDLMSClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ImportDataFromSabaCandH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ImportDataFromSmartCardReader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ImportDataFromSQLCe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ImportFromSABAPC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Information Show Regulation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\IssuanceCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Meters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Modems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\negativeCreditReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\NewGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\NewObis.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\NewUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\NominalDemandViolationReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\PowerManagmentReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Select.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SelectDataTypeForExportToExcel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Setting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ShowCardData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Simple.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SplashScreenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SwitchoverMeter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\TemplateforReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\TimeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\toolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\DeviceModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\UserToGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\WaterManagementReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\WaterPublicInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MeterShutdownInterval.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WaitingForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.manifest" />
+    <EntityDeploy Include="DataBase\SabaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SabaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataBase\SabaModel.edmx.diagram">
+      <DependentUpon>SabaModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="100x70.jpg" />
+    <DesignTimeOnly Include="SampleData\SampleDataSource1\SampleDataSource1.xsd" />
+    <DesignTimeOnly Include="SampleData\DataWater\DataWater.xsd" />
+    <DesignTimeOnly Include="SampleData\منحنی\منحنی.xsd" />
+    <DesignTimeOnly Include="SampleData\UseWater\UseWater.xsd" />
+    <DesignTimeOnly Include="SampleData\PublicBargh\PublicBargh.xsd" />
+    <DesignTimeOnly Include="SampleData\UseElec\UseElec.xsd" />
+    <DesignTimeOnly Include="SampleData\UsedElec1\UsedElec1.xsd" />
+    <DesignTimeOnly Include="SampleData\Tarefeh\Tarefeh.xsd" />
+    <DesignTimeOnly Include="SampleData\MoshakhasatKontor\MoshakhasatKontor.xsd" />
+    <DesignTimeOnly Include="SampleData\PublicRoydad\PublicRoydad.xsd" />
+    <DesignTimeOnly Include="SampleData\RActiveEng\RActiveEng.xsd" />
+    <DesignTimeOnly Include="SampleData\SetshowInfo\SetshowInfo.xsd" />
+    <DesignTimeOnly Include="SampleData\TestshowInfo\TestshowInfo.xsd" />
+    <DesignTimeOnly Include="SampleData\TestShowInfo2\TestShowInfo2.xsd" />
+    <DesignTimeOnly Include="SampleData\MainWindow\MainWindow.xsd" />
+    <DesignTimeOnly Include="SampleData\OBIS\OBIS.xsd" />
+    <DesignTimeOnly Include="SampleData\newgroup\newgroup.xsd" />
+    <DesignTimeOnly Include="SampleData\NewMeter\NewMeter.xsd" />
+    <DesignTimeOnly Include="SampleData\Tree\Tree.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+    <Folder Include="Model\" />
+    <Folder Include="PDF\" />
+    <Folder Include="Views\Credit\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\button_cancel_256.png" />
+    <Resource Include="UI\cardBest.png" />
+    <Resource Include="Image\Excel1.png" />
+    <Resource Include="Image\F.png" />
+    <Resource Include="Image\F1.png" />
+    <Resource Include="Image\Folder.jpg" />
+    <Resource Include="Image\folder1.jpg" />
+    <Resource Include="Image\HHUBest.jpg" />
+    <Resource Include="Image\Image1.png" />
+    <Resource Include="Image\Image2.png" />
+    <Resource Include="UI\N.png" />
+    <Resource Include="UI\new_256.png" />
+    <Resource Include="UI\Print.png" />
+    <Resource Include="UI\save_all.png" />
+    <Resource Include="UI\tab_new_256.png" />
+    <Resource Include="UI\water11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\button_cancel_256.png" />
+    <Resource Include="Image\button_ok.png" />
+    <Resource Include="Image\cancel.png" />
+    <Resource Include="Image\erase.png" />
+    <Resource Include="Image\import.png" />
+    <Resource Include="Image\new.png" />
+    <Resource Include="Image\refresh.png" />
+    <Resource Include="Image\save_all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ab2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Down.png" />
+    <Resource Include="Image\Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\application_vnd_ms_excel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\highlighted close.png" />
+    <Resource Include="Themes\Images\highlighted maximize.bmp" />
+    <Resource Include="Themes\Images\highlighted minimize.bmp" />
+    <Resource Include="Themes\Images\normal close.png" />
+    <Resource Include="Themes\Images\normal maximize.bmp" />
+    <Resource Include="Themes\Images\normal minimize.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="fujitsu_siemens_pocket_loox_t830.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\fujitsu_siemens_pocket_loox_t830.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\SAG_HomePage_Nov2015_CustomerSuccess_tcm43-126857.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Backup_of_logo rsa farsi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\newlogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\About2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\splash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="VersionInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataBase\SabaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SabaModel.edmx</DependentUpon>
+      <LastGenOutput>SabaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBase\SabaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SabaModel.edmx</DependentUpon>
+      <LastGenOutput>SabaModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Dlls\AForge.Neuro.dll" />
+    <Content Include="Dlls\Card Framework.dll" />
+    <Content Include="Dlls\Card Reader.dll" />
+    <Content Include="Dlls\ColorPicker.dll" />
+    <Content Include="Dlls\Data Access.dll" />
+    <Content Include="Dlls\DataGridFilterLibrary.dll" />
+    <Content Include="Dlls\DataTransfer.dll" />
+    <Content Include="Dlls\DevExpress.Charts.v14.1.Core.dll" />
+    <Content Include="Dlls\DevExpress.Data.v14.1.dll" />
+    <Content Include="Dlls\DevExpress.Mvvm.v14.1.dll" />
+    <Content Include="Dlls\DevExpress.Printing.v14.1.Core.dll" />
+    <Content Include="Dlls\devexpress.xpf.charts.v14.1.dll" />
+    <Content Include="Dlls\DevExpress.Xpf.Core.v14.1.dll" />
+    <Content Include="Dlls\DevExpress.Xpf.Printing.v14.1.dll" />
+    <Content Include="Dlls\DLMS.dll" />
+    <Content Include="Dlls\EPPlus.dll" />
+    <Content Include="Dlls\Generics.dll" />
+    <Content Include="Dlls\ICube.EzHdlc.dll" />
+    <Content Include="Dlls\ICube.XmlPdu.dll" />
+    <Content Include="Dlls\Interop.PortableDeviceTypesLib.dll" />
+    <Content Include="Dlls\Microsoft.QualityTools.Testing.Fakes.dll" />
+    <Content Include="Dlls\Microsoft.SqlServer.ConnectionInfo.dll" />
+    <Content Include="Dlls\Microsoft.SqlServer.Dmf.dll" />
+    <Content Include="Dlls\Microsoft.SqlServer.Management.Sdk.Sfc.dll" />
+    <Content Include="Dlls\Microsoft.SqlServer.ServiceBrokerEnum.dll" />
+    <Content Include="Dlls\Microsoft.SqlServer.Smo.dll" />
+    <Content Include="Dlls\Microsoft.SqlServer.SqlEnum.dll" />
+    <Content Include="Dlls\Microsoft.Windows.Shell.dll" />
+    <Content Include="Dlls\Newtonsoft.Json.dll" />
+    <Content Include="Dlls\PersianDate.dll" />
+    <Content Include="Dlls\PersianDateControls.dll" />
+    <Content Include="Dlls\PresentationCore.4.0.0.0.Fakes.dll" />
+    <Content Include="Dlls\QuickGraph.Data.dll" />
+    <Content Include="Dlls\QuickGraph.dll" />
+    <Content Include="Dlls\QuickGraph.Graphviz.dll" />
+    <Content Include="Dlls\rapi.dll" />
+    <Content Include="Dlls\RibbonControlsLibrary.dll" />
+    <Content Include="Dlls\SCardReaderDll.dll" />
+    <Content Include="Dlls\system.windows.controls.datavisualization.toolkit.dll" />
+    <Content Include="Dlls\System.Windows.Interactivity.dll" />
+    <Content Include="Dlls\UIAutomationProvider.dll" />
+    <Content Include="Dlls\UIAutomationTypes.dll" />
+    <Content Include="Dlls\WPFToolkit.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Card\Card.csproj">
+      <Project>{3ab0864e-fef7-4a22-a7b1-03194a770409}</Project>
+      <Name>Card</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DLMS\DLMS\DLMS.csproj">
+      <Project>{a19fb0a5-9aef-4865-a620-5ef21fbbb019}</Project>
+      <Name>DLMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HandHeldReader\HandHeldReader.csproj">
+      <Project>{6ddc75bf-4d25-4820-801f-fe4446623fe7}</Project>
+      <Name>HandHeldReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HHU303\HHU303.csproj">
+      <Project>{bdc8841d-ee5b-4e74-8c41-ffbcff940497}</Project>
+      <Name>HHU303</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MeterStatus Ver1 C&amp;H\MeterStatus\MeterStatus.csproj">
+      <Project>{f43bcda8-3bea-449e-8236-cb364834e5ef}</Project>
+      <Name>MeterStatus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RAPI2\RAPI2.csproj">
+      <Project>{0ac8e95f-f391-448b-8974-75422d19c446}</Project>
+      <Name>RAPI2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RsaDateTime\RsaDateTime.csproj">
+      <Project>{8fea3356-4475-443b-ade8-ba3a4300f864}</Project>
+      <Name>RsaDateTime</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VEE\VEE.csproj">
+      <Project>{e676b25c-d10c-4710-b31d-0dcff26f4b84}</Project>
+      <Name>VEE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!--<Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
+   To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

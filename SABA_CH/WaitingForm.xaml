@@ -1,0 +1,20 @@
+﻿<Window x:Class="SABA_CH.WaitingForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SABA_CH"
+        mc:Ignorable="d"
+       
+        Title="WaitingForm" Height="388.006" Width="648.29" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Cursor="None" WindowStyle="None" Topmost="True" MouseDown="Window_MouseDown" MouseDoubleClick="Window_MouseDown" MouseEnter="Window_MouseEnter" IsHitTestVisible="False" >
+
+    <Grid IsHitTestVisible="False">
+      
+        <Grid Grid.RowSpan="4">
+            <Image Source="UI/water11.jpg" />
+            <Label Content="      برنامه درحال بروزرسانی است             لطفا تا پایان عملیات منتظر بمانید" Height="53" Margin="32,51,54,284" VerticalAlignment="Center" Padding="0" VerticalContentAlignment="Center"  RenderTransformOrigin="0.647,2" FontFamily="B Nazanin" FontWeight="Bold" FontSize="22" FlowDirection="RightToLeft" Grid.Row="1"/>
+
+        </Grid>
+
+    </Grid>
+</Window>

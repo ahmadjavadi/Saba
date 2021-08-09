@@ -1,0 +1,20 @@
+﻿<Window x:Class="SABA_CH.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="357" Width="457" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Icon="Image/fujitsu_siemens_pocket_loox_t830.ico" Closing="Window_Closing">
+    <Grid>
+        <Image Source="Image/1.jpg" Margin="0,0,0,65" Stretch="UniformToFill"/>
+        <Grid>
+            <!--<ComboBox x:Name="cmbUserName" HorizontalAlignment="Left" Height="23" Margin="185,190,0,0" VerticalAlignment="Top" Width="177" ItemsSource="{Binding UserInformation}" DisplayMemberPath="UserName" SelectedIndex="0" SelectionChanged="cmbUserName_SelectionChanged"/>-->
+            <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="23" Margin="185,190,0,0" VerticalAlignment="Top" Width="177"/>
+            <Label Content="Password" HorizontalAlignment="Right" Height="25" Margin="0,220,325,0" VerticalAlignment="Top" Width="68" Padding="0" VerticalContentAlignment="Center" RenderTransformOrigin="0.647,2"/>
+            <PasswordBox x:Name="txtPass" HorizontalAlignment="Left" Height="23" Margin="187,223,0,0" VerticalAlignment="Top" Width="175"/>
+            <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="29" Margin="130,284,0,0" VerticalAlignment="Top" Width="76" IsDefault="True" Click="btnOK_Click"/>
+            <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="29" Margin="235,285,0,0" VerticalAlignment="Top" Width="76" IsCancel="True" Click="btnCancel_Click"/>
+            <Label Content="Language" HorizontalAlignment="Right" Height="25" Margin="0,250,325,0" VerticalAlignment="Top" Width="68" Padding="0" VerticalContentAlignment="Center" RenderTransformOrigin="0.647,2"/>
+            <ComboBox x:Name="cmbLanguage" HorizontalAlignment="Left" Height="23" Margin="185,254,0,0" VerticalAlignment="Top" Width="177" ItemsSource="{Binding LanguageInformation}" DisplayMemberPath="LanguageName" SelectedIndex="1" SelectionChanged="cmbLanguage_SelectionChanged"/>
+        </Grid>
+        <Label Content="User Name" HorizontalAlignment="Right" Height="25" Margin="0,190,326,0" VerticalAlignment="Top" Width="68" Padding="0" VerticalContentAlignment="Center"/>
+        
+    </Grid>
+</Window>

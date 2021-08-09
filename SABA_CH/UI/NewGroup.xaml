@@ -1,0 +1,185 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:filter="clr-namespace:DataGridFilterLibrary;assembly=DataGridFilterLibrary"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="SABA_CH.NewGroup"
+	x:Name="New_Group"
+	Title="گروه جدید"
+	 WindowStartupLocation="CenterOwner"
+	Width="650" Height="649.463" Activated="Window_Activated" Closing="Window_Closing" Padding="0"   FontFamily="Tahoma"   ShowInTaskbar="False">
+    <Window.Resources>
+        <RoutedUICommand x:Key="MyCommand1" Text="Text" />
+        <RoutedUICommand x:Key="MyCommand2" Text="Another Text" />
+        <RoutedUICommand x:Key="MyCommand3" Text="Another Text" />
+        <RoutedUICommand x:Key="MyCommand4" Text="Another Text"/>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource MyCommand1}" 
+                    Executed="ToolStripButtonNew_Click" />
+        <CommandBinding Command="{StaticResource MyCommand2}" 
+                        Executed="ToolStripButtonSave_Click" />
+        <CommandBinding Command="{StaticResource MyCommand4}" 
+                        Executed="ToolStripButtonDelete_Click" />
+
+
+
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="N" Modifiers="Ctrl" Command="{StaticResource MyCommand1}" />
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="{StaticResource MyCommand2}" />
+        <KeyBinding Key="P" Modifiers="Ctrl" Command="{StaticResource MyCommand3}" />
+        <KeyBinding Key="DELETE"  Command="{StaticResource MyCommand4}" />
+    </Window.InputBindings>
+    <Grid x:Name="LayoutRoot" FlowDirection="RightToLeft" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="181*"/>
+            <RowDefinition Height="16"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="253*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFD7E8FC" Offset="0" />
+                <GradientStop Color="#FF95B7E8" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid x:Name="GridLabel" Grid.RowSpan="5">
+            <Label Content="{Binding Object1}" HorizontalAlignment="Left" Margin="10,287,0,306" VerticalAlignment="Center" FlowDirection="RightToLeft"   Height="26" Width="Auto" Padding="0" Grid.Row="3"/>
+            <!--<Label Content="{Binding Object4}" HorizontalAlignment="Left" Margin="442,269,0,324" VerticalAlignment="Center" FlowDirection="RightToLeft"   Height="26" Width="Auto" Padding="0"/>-->
+
+        </Grid>
+        <Label x:Name="lblcount" Content="" Grid.Row="2" FontSize="12" HorizontalContentAlignment="Right" Padding="0" Background="{x:Null}" Margin="0" Grid.RowSpan="2"/>
+        <TextBox x:Name="txtGroupName" Height="24" Margin="138,3,0,5" TextWrapping="Wrap" VerticalAlignment="Center"  Grid.Row="3" HorizontalAlignment="Left" Width="261" TabIndex="1"/>
+        <!--<TextBox x:Name="txtHash" Height="26" Margin="606,8,0,10" TextWrapping="Wrap" VerticalAlignment="Center"  Grid.Row="2" HorizontalAlignment="Left" Width="153"/>-->
+        <ToolBar FlowDirection="LeftToRight" x:Name="toolBar1">
+            <ToolBar.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0" />
+                    <GradientStop Color="White" Offset="0" />
+                </LinearGradientBrush>
+            </ToolBar.Background>
+            <Grid Background="White" Width="42" Visibility="{Binding CanInsert, Converter={StaticResource BoolToVis}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+                <Label Content="New" Grid.Row="1" FontSize="8" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                <Button x:Name="ToolStripButtonNew" ToolTip="New" Click="ToolStripButtonNew_Click" Visibility="{Binding CanInsert, Converter={StaticResource BoolToVis}}" Background="{x:Null}">
+                    <Image Source="/Saba;component/Image/new.png" Stretch="Fill" />
+                </Button>
+
+            </Grid>
+            <Grid Background="White" Width="42" Visibility="{Binding CanUpdate, Converter={StaticResource BoolToVis}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Save" Grid.Row="1" FontSize="8" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Button   x:Name="ToolStripButtonSave" ToolTip="Save"  Click="ToolStripButtonSave_Click" Visibility="{Binding CanUpdate, Converter={StaticResource BoolToVis}}" Background="{x:Null}">
+                    <Image x:Name="ToolStripButtonSave1"  Source="save_all.png" Stretch="Fill" />
+                </Button>
+            </Grid>
+            <Grid Background="White" Width="42" Visibility="{Binding CanDelete, Converter={StaticResource BoolToVis}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Delete" Grid.Row="1" FontSize="8" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Button  x:Name="ToolStripButtonDelete" ToolTip="Delete" Click="ToolStripButtonDelete_Click" Visibility="{Binding CanDelete, Converter={StaticResource BoolToVis}}" Background="{x:Null}">
+                    <Image Source="button_cancel_256.png" Stretch="Fill" />
+                </Button>
+            </Grid>
+            <Grid Background="White" Width="42">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Refresh" Grid.Row="1" FontSize="8" Height="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Button  x:Name="ToolStripButtonRefresh" ToolTip="Refresh"  Click="ToolStripButtonRefresh_Click" Background="{x:Null}">
+                    <Image Source="/Saba;component/Image/refresh.png" Stretch="Fill" />
+                </Button>
+            </Grid>
+            <Separator Margin="0" />
+        </ToolBar>
+        <DataGrid x:Name="MainGrid" Margin="0" Grid.Row="1" SelectedIndex="0" FlowDirection="RightToLeft"
+                  filter:DataGridExtensions.UseBackgroundWorkerForFiltering="True"
+                        
+                       filter:DataGridExtensions.IsClearButtonVisible="False"
+                        
+                       filter:DataGridExtensions.IsFilterVisible="{Binding 
+                                                                  Path=IsChecked,
+                                                                  ElementName=ShowHideFilterCheckBox, Mode=TwoWay}"
+                        
+                       ColumnHeaderStyle="{StaticResource {ComponentResourceKey 
+		                       TypeInTargetAssembly={x:Type filter:DataGridHeaderFilterControl}, 
+		                       ResourceId=DataGridHeaderFilterControlStyle}}" SelectionChanged="MainGrid_SelectionChanged" IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="#FFBEBAE0" Background="White" LoadingRow="MainGrid_LoadingRow" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding GroupName}" Header="نام گروه" MinWidth="200"  Width="*"/>
+                <!--<DataGridTextColumn Binding="{Binding HashValue}" Header="مقدار Hash پیش فرض" MinWidth="200"  Width="*"/>-->
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid x:Name="MeterListGrid" Margin="0" Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="22"/>
+                <RowDefinition/>
+                <RowDefinition Height="16"/>
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFD7E8FC" Offset="0"/>
+                    <GradientStop Color="#FF95B7E8" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="44"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="RGrid" Margin="0" filter:DataGridExtensions.UseBackgroundWorkerForFiltering="True"
+                        
+                       filter:DataGridExtensions.IsClearButtonVisible="False"
+                        
+                       filter:DataGridExtensions.IsFilterVisible="{Binding 
+                                                                  Path=IsChecked,
+                                                                  ElementName=ShowHideFilterCheckBox, Mode=TwoWay}"
+                        
+                       ColumnHeaderStyle="{StaticResource {ComponentResourceKey 
+		                       TypeInTargetAssembly={x:Type filter:DataGridHeaderFilterControl}, 
+		                       ResourceId=DataGridHeaderFilterControlStyle}}" AutoGenerateColumns="False" IsReadOnly="True" AlternatingRowBackground="#FFBEBAE0" SelectionChanged="RGrid_SelectionChanged" SelectedIndex="0" Background="White" Grid.Row="1" LoadingRow="RGrid_LoadingRow">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding MeterNumber}" Width="*" Header="شماره کنتور"/>
+                    <DataGridTextColumn Binding="{Binding ModemNumber}" Width="*" Header="شماره مودم"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label Name="Rlbl" Padding="0" Content="{Binding Object5}"  Foreground="#FF7D8071" RenderTransformOrigin="0.281,-1"/>
+            <Label Name="Llbl" Padding="0" Content="{Binding Object6}" Grid.Column="2"  Foreground="#FF2CB64B"/>
+            <DataGrid x:Name="LGrid" Grid.Column="2" Margin="0" filter:DataGridExtensions.UseBackgroundWorkerForFiltering="True"
+                        
+                       filter:DataGridExtensions.IsClearButtonVisible="False"
+                        
+                       filter:DataGridExtensions.IsFilterVisible="{Binding 
+                                                                  Path=IsChecked,
+                                                                  ElementName=ShowHideFilterCheckBox, Mode=TwoWay}"
+                        
+                       ColumnHeaderStyle="{StaticResource {ComponentResourceKey 
+		                       TypeInTargetAssembly={x:Type filter:DataGridHeaderFilterControl}, 
+		                       ResourceId=DataGridHeaderFilterControlStyle}}" AutoGenerateColumns="False" IsReadOnly="True" AlternatingRowBackground="#FFBEBAE0" SelectionChanged="LGrid_SelectionChanged" SelectedIndex="0" Background="White" Grid.Row="1" LoadingRow="LGrid_LoadingRow">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding MeterNumber}" Width="*" Header="شماره کنتور"/>
+                    <DataGridTextColumn Binding="{Binding ModemNumber}" Width="*" Header="شماره مودم"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="btnSendOne" Content="&gt;" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="9,29,0,0" VerticalAlignment="Top" Width="25" Padding="0" ScrollViewer.CanContentScroll="True" RenderTransformOrigin="1.65,0.45" FlowDirection="RightToLeft" Click="btnSendOne_Click" Grid.Row="1" TabIndex="2"/>
+            <Button x:Name="btnSendAll" Content="&gt;&gt;" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="9,59,0,0" VerticalAlignment="Top" Width="25" Padding="0" ScrollViewer.CanContentScroll="True" RenderTransformOrigin="1.65,0.45" FlowDirection="RightToLeft" Click="btnSendAll_Click" Grid.Row="1" TabIndex="3"/>
+            <Button x:Name="btngetOne" Content="&lt;" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="9,89,0,0" VerticalAlignment="Top" Width="25" Padding="0" ScrollViewer.CanContentScroll="True" RenderTransformOrigin="1.65,0.45" FlowDirection="RightToLeft" Click="btngetOne_Click" Grid.Row="1" TabIndex="4"/>
+            <Button x:Name="btngetAll" Content="&lt;&lt;" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="9,119,0,0" VerticalAlignment="Top" Width="25" Padding="0" ScrollViewer.CanContentScroll="True" RenderTransformOrigin="1.65,0.45" FlowDirection="RightToLeft" Click="btngetAll_Click" Grid.Row="1" TabIndex="5"/>
+            <Label x:Name="lblcountR" Content="" Grid.Row="3" FontSize="12" HorizontalContentAlignment="Right" Padding="0" Background="{x:Null}" Margin="0,0,0,0" Grid.Column="0"/>
+            <Label x:Name="lblcountL" Content="" Grid.Row="3" FontSize="12" HorizontalContentAlignment="Right" Padding="0" Background="{x:Null}" Margin="0" Grid.Column="2"/>
+        </Grid>
+    </Grid>
+</Window>

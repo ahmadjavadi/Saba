@@ -1,0 +1,10 @@
+﻿<Application
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource1" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:SampleData1="clr-namespace:Expression.Blend.SampleData.PublicBargh" xmlns:SampleData2="clr-namespace:Expression.Blend.SampleData.UseWater" xmlns:SampleData3="clr-namespace:Expression.Blend.SampleData.منحنی" xmlns:SampleData4="clr-namespace:Expression.Blend.SampleData.DataWater" xmlns:SampleData5="clr-namespace:Expression.Blend.SampleData.PublicRoydad" xmlns:SampleData6="clr-namespace:Expression.Blend.SampleData.MoshakhasatKontor" xmlns:SampleData7="clr-namespace:Expression.Blend.SampleData.Tarefeh" xmlns:SampleData8="clr-namespace:Expression.Blend.SampleData.UsedElec1" xmlns:SampleData9="clr-namespace:Expression.Blend.SampleData.UseElec" xmlns:SampleData10="clr-namespace:Expression.Blend.SampleData.RActiveEng" xmlns:SampleData11="clr-namespace:Expression.Blend.SampleData.SetshowInfo" xmlns:SampleData12="clr-namespace:Expression.Blend.SampleData.TestShowInfo2" xmlns:SampleData13="clr-namespace:Expression.Blend.SampleData.TestshowInfo" xmlns:SampleData14="clr-namespace:Expression.Blend.SampleData.MainWindow" xmlns:SampleData15="clr-namespace:Expression.Blend.SampleData.OBIS" xmlns:SampleData17="clr-namespace:Expression.Blend.SampleData.newgroup" xmlns:SampleData16="clr-namespace:Expression.Blend.SampleData.NewMeter" xmlns:SampleData18="clr-namespace:Expression.Blend.SampleData.Tree" mc:Ignorable="d" x:Class="SABA_CH.App"
+             StartupUri="MainWindow.xaml">
+    <!--<Application.Resources>
+        <ResourceDictionary Source="Themes/Skins/ShinyBlue.xaml"/>
+    </Application.Resources>-->
+
+</Application>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Versions>
+	<version value="1.2.0.53">
+		<change>با بسته شدن نرم افزار از کاربر جهت گرفتن بکاپ سوال پرسیده می شود</change>
+		<change>InsMeter به روز رسانی اصلاح شد</change>
+	</version>
+</Versions>
